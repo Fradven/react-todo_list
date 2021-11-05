@@ -48,12 +48,18 @@ function App() {
   //the inject component to the index
   return (
     <>
-    <form onSubmit={addTodo}>
-    <input ref={addRef} type="text"/>
+    <div className="todo">
+    <h1 className="todo__title">Your Todo List</h1>
+    <form className="todo__form"onSubmit={addTodo}>
+      <label className="todo__label">Add to the List: </label>
+        <input ref={addRef} type="text"/>      
     </form>
-    <button onClick={addTodo}>Add to List</button>
-    <button onClick={clearTodo}>Clear List</button>
+    <div className="todo__ctn">
+      <button className="todo__btn todo__btn--add" onClick={addTodo}><span className="text">Add to List</span></button>
+      <button className="todo__btn todo__btn--rmv" onClick={clearTodo}><span className="text">Remove Selected</span></button>
+    </div>
     <TodoList todoList={todo} toggleCheckbox={toggleCheckbox}/>
+    </div>
     </>
   )
 }
