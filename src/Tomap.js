@@ -12,9 +12,9 @@ export default function Tomap({todomap, toggleCheckbox}) {
         toggleCheckbox(todomap.id)
       }
     return (
-        <div>
+        <div className="todo__item">
             <label>
-            <input type="checkbox" checked={todomap.complete} onChange={handleTodoClick}/>
+            <input className="todo_exput" type="checkbox" checked={todomap.complete} onChange={handleTodoClick}/>
             {todomap.name}
             </label>
         </div>

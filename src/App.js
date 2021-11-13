@@ -55,8 +55,12 @@ function App() {
         <input ref={addRef} type="text"/>      
     </form>
     <div className="todo__ctn">
-      <button className="todo__btn todo__btn--add" onClick={addTodo}><span className="text">Add to List</span></button>
-      <button className="todo__btn todo__btn--rmv" onClick={clearTodo}><span className="text">Remove Selected</span></button>
+      <button className="todo__btn todo__btn--add" onClick={addTodo}>
+        <span className="text">Add</span>
+        
+        </button>
+      <button className="todo__btn todo__btn--rmv" onClick={clearTodo}>
+        <span className="text">Remove</span></button>
     </div>
     <TodoList todoList={todo} toggleCheckbox={toggleCheckbox}/>
     </div>
