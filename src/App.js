@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
-import uuidv4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 
 const LOCAL_STORAGE_KEY = "todoApp.todo"
 
@@ -49,20 +49,25 @@ function App() {
   return (
     <>
     <div className="todo">
-    <h1 className="todo__title">Your Todo List</h1>
-    <form className="todo__form"onSubmit={addTodo}>
-      <label className="todo__label">Add to the List: </label>
-        <input ref={addRef} type="text"/>      
-    </form>
-    <div className="todo__ctn">
-      <button className="todo__btn todo__btn--add" onClick={addTodo}>
-        <span className="text">Add</span>
-        
-        </button>
-      <button className="todo__btn todo__btn--rmv" onClick={clearTodo}>
-        <span className="text">Remove</span></button>
-    </div>
-    <TodoList todoList={todo} toggleCheckbox={toggleCheckbox}/>
+      <h1 className="todo__title">Your Todo List</h1>
+      <div className="todo__add-btn">
+
+        <form className="todo__form"onSubmit={addTodo}>
+          <label className="todo__label">Add to the List: </label>
+          <input ref={addRef} type="text"/>      
+        </form>
+        <div className="todo__ctn">
+          <button className="todo__btn todo__btn--add" onClick={addTodo}>
+            <span className="text">Add</span>        
+          </button>
+          <button className="todo__btn todo__btn--rmv" onClick={clearTodo}>
+            <span className="text">Remove</span>
+          </button>
+        </div>
+      </div>
+      <div className="todo__list-ctn">
+        <TodoList todoList={todo} toggleCheckbox={toggleCheckbox}/>
+      </div>
     </div>
     </>
   )
